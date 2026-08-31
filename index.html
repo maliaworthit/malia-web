@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,14 +35,13 @@ body {
     color: var(--text);
 }
 
-
 /* =========================
    HEADER
 ========================= */
 
 header {
     height: 82px;
-    background: rgba(255,253,251,0.97);
+    background: rgba(255,253,251,0.98);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,16 +77,42 @@ nav a:hover {
     background: var(--brown);
     color: white;
     border: none;
-    padding: 11px 18px;
+    padding: 11px 20px;
     border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
 .cart-button:hover {
     transform: translateY(-2px);
 }
 
+/* =========================
+   WHATSAPP FLOTANTE
+========================= */
+
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    background: var(--brown);
+    color: white;
+    text-decoration: none;
+    padding: 14px 21px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(90,70,55,0.25);
+    z-index: 2500;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+    background: #49382c;
+}
 
 /* =========================
    HERO
@@ -127,6 +150,13 @@ nav a:hover {
 .hero p {
     max-width: 500px;
     line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.hero-thanks {
+    font-family: "Playfair Display", serif;
+    color: var(--brown);
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
@@ -141,10 +171,12 @@ nav a:hover {
     border: none;
     cursor: pointer;
     font-family: inherit;
+    transition: 0.3s;
 }
 
 .button:hover {
     opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 .hero-image {
@@ -153,7 +185,6 @@ nav a:hover {
     background-size: cover;
     background-position: center;
 }
-
 
 /* =========================
    SECCIONES
@@ -174,7 +205,6 @@ section {
     font-size: 42px;
     margin-top: 10px;
 }
-
 
 /* =========================
    CATEGORÍAS
@@ -216,7 +246,6 @@ section {
     font-size: 25px;
 }
 
-
 /* =========================
    PRODUCTOS
 ========================= */
@@ -233,7 +262,7 @@ section {
 
 .product-card {
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid #eee3d9;
     transition: 0.3s;
@@ -275,10 +304,10 @@ section {
     margin-bottom: 15px;
 }
 
-.price {
+.quote-label {
     color: var(--brown);
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .add-button {
@@ -290,6 +319,7 @@ section {
     border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
+    transition: 0.3s;
 }
 
 .add-button:hover {
@@ -297,28 +327,37 @@ section {
     color: white;
 }
 
-
 /* =========================
-   SOBRE MALIÁ
+   ABOUT
 ========================= */
 
+.about-section {
+    background: var(--brown);
+    color: white;
+}
+
 .about {
-    max-width: 750px;
+    max-width: 800px;
     margin: auto;
     text-align: center;
 }
 
+.about .eyebrow {
+    color: var(--beige);
+}
+
 .about h2 {
     font-family: "Playfair Display", serif;
-    color: var(--brown);
-    font-size: 42px;
-    margin: 15px 0 20px;
+    color: white;
+    font-size: 44px;
+    margin: 15px 0 25px;
 }
 
 .about p {
     line-height: 1.9;
+    color: #f4ebe3;
+    font-size: 16px;
 }
-
 
 /* =========================
    CONTACTO
@@ -336,7 +375,6 @@ section {
     margin: 12px 0 25px;
 }
 
-
 /* =========================
    FOOTER
 ========================= */
@@ -353,36 +391,9 @@ footer .footer-logo {
     margin-bottom: 18px;
 }
 
-
-/* =========================
-   WHATSAPP FLOTANTE
-========================= */
-
-.whatsapp-floating {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 2500;
-
-    background: #25D366;
-    color: white;
-
-    padding: 14px 20px;
-    border-radius: 40px;
-
-    text-decoration: none;
+footer p {
     font-size: 14px;
-    font-weight: 600;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
-
-    transition: 0.3s;
 }
-
-.whatsapp-floating:hover {
-    transform: translateY(-3px);
-}
-
 
 /* =========================
    CARRITO
@@ -392,22 +403,13 @@ footer .footer-logo {
     position: fixed;
     right: -450px;
     top: 0;
-
     width: 430px;
-    max-width: 100%;
-
     height: 100vh;
-
-    background: var(--white);
-
+    background: #fffdfb;
     z-index: 3000;
-
-    padding: 35px;
-
+    padding: 32px;
     box-shadow: -15px 0 45px rgba(0,0,0,0.15);
-
-    transition: 0.4s;
-
+    transition: 0.4s ease;
     overflow-y: auto;
 }
 
@@ -428,31 +430,32 @@ footer .footer-logo {
     font-family: "Playfair Display", serif;
     color: var(--brown);
     font-size: 32px;
+    margin-bottom: 5px;
 }
 
 .cart-subtitle {
-    color: #766960;
     font-size: 13px;
-    line-height: 1.6;
-    margin: 10px 0 25px;
+    color: #8b7b6e;
+    margin-bottom: 20px;
 }
 
 .cart-item {
-    padding: 18px 0;
-    border-bottom: 1px solid #eee3d9;
+    padding: 18px;
+    margin-bottom: 12px;
+    border: 1px solid #eee3d9;
+    border-radius: 10px;
+    background: white;
 }
 
 .cart-item-name {
     color: var(--brown);
-    font-family: "Playfair Display", serif;
-    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 6px;
 }
 
-.cart-item-details {
+.cart-item-quantity {
+    color: #777;
     font-size: 13px;
-    color: #766960;
-    line-height: 1.6;
 }
 
 .remove {
@@ -461,7 +464,16 @@ footer .footer-logo {
     color: #9b5c5c;
     cursor: pointer;
     margin-top: 10px;
-    font-family: inherit;
+    font-size: 12px;
+}
+
+.cart-total {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--brown);
+    margin: 25px 0;
+    padding-top: 20px;
+    border-top: 1px solid #e8ddd3;
 }
 
 .checkout {
@@ -473,32 +485,114 @@ footer .footer-logo {
     border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
-    font-size: 14px;
-    transition: 0.3s;
+    font-weight: 600;
 }
 
-.checkout:hover {
-    opacity: 0.9;
+.empty-cart {
+    text-align: center;
+    padding: 45px 15px;
+    color: #8b7b6e;
 }
-
 
 /* =========================
-   MODALES
+   MODAL PRODUCTO
+========================= */
+
+.product-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 3500;
+    background: rgba(30,20,15,0.68);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-modal.show {
+    display: flex;
+}
+
+.product-modal-content {
+    background: white;
+    width: 800px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+}
+
+.product-modal-image {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+}
+
+.product-modal-info {
+    padding: 38px;
+}
+
+.product-modal-info h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--brown);
+    font-size: 34px;
+    margin: 10px 0 18px;
+}
+
+.product-modal-info p {
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    z-index: 3;
+    background: white;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: var(--brown);
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+.quantity-label {
+    display: block;
+    color: var(--brown);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.quantity-input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd2c7;
+    border-radius: 7px;
+    margin-bottom: 18px;
+    font-family: inherit;
+}
+
+/* =========================
+   FORMULARIO
 ========================= */
 
 .modal {
     display: none;
-
     position: fixed;
     inset: 0;
-
     z-index: 4000;
-
     background: rgba(30,20,15,0.65);
-
     align-items: center;
     justify-content: center;
-
     padding: 20px;
 }
 
@@ -508,60 +602,39 @@ footer .footer-logo {
 
 .modal-content {
     background: white;
-
-    width: 550px;
+    width: 520px;
     max-width: 100%;
-
     max-height: 90vh;
-
     overflow-y: auto;
-
     padding: 35px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    border-radius: 14px;
 }
 
 .modal-content h2 {
     font-family: "Playfair Display", serif;
     color: var(--brown);
     font-size: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-.modal-description {
-    color: #766960;
-    line-height: 1.7;
-    font-size: 14px;
-    margin-bottom: 25px;
+.form-description {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 22px;
+    line-height: 1.6;
 }
 
 .modal-content input,
 .modal-content textarea,
 .modal-content select {
     width: 100%;
-
     padding: 13px;
-
-    margin-bottom: 14px;
-
+    margin-bottom: 13px;
     border: 1px solid #ddd2c7;
-
     border-radius: 7px;
-
     font-family: inherit;
-
-    font-size: 14px;
-
+    color: var(--text);
     background: white;
-}
-
-.modal-content input:focus,
-.modal-content textarea:focus,
-.modal-content select:focus {
-    outline: none;
-    border-color: var(--brown-light);
 }
 
 .modal-content textarea {
@@ -569,95 +642,38 @@ footer .footer-logo {
     resize: vertical;
 }
 
-.field-label {
+.date-label {
     display: block;
-
     color: var(--brown);
-
-    font-size: 12px;
-
+    font-size: 13px;
     font-weight: 600;
-
-    margin-bottom: 6px;
+    margin-bottom: 7px;
 }
 
-.date-field {
-    width: 100%;
+.required-note {
+    color: #9b5c5c;
+    font-size: 11px;
+    margin-top: -5px;
     margin-bottom: 14px;
 }
 
-.date-field input {
-    margin-bottom: 0;
-    min-height: 47px;
+.order-summary {
+    background: var(--cream);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 18px;
 }
 
-.modal-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 8px;
-}
-
-.modal-secondary {
-    flex: 1;
-
-    padding: 13px;
-
-    border: 1px solid var(--brown);
-
-    background: white;
-
+.order-summary-title {
     color: var(--brown);
-
-    border-radius: 30px;
-
-    cursor: pointer;
-
-    font-family: inherit;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
-.modal-primary {
-    flex: 1;
-
-    padding: 13px;
-
-    border: none;
-
-    background: var(--brown);
-
-    color: white;
-
-    border-radius: 30px;
-
-    cursor: pointer;
-
-    font-family: inherit;
-}
-
-
-/* =========================
-   MENSAJES DE ERROR
-========================= */
-
-.error-message {
-    display: none;
-
-    background: #f7e8e5;
-
-    color: #7d4038;
-
-    padding: 12px;
-
-    border-radius: 7px;
-
+.order-summary-item {
     font-size: 13px;
-
-    margin-bottom: 15px;
+    margin: 5px 0;
 }
-
-.error-message.show {
-    display: block;
-}
-
 
 /* =========================
    RESPONSIVE
@@ -689,17 +705,30 @@ footer .footer-logo {
         grid-template-columns: 1fr 1fr;
     }
 
-}
+    .product-modal-content {
+        grid-template-columns: 1fr;
+    }
 
+    .product-modal-image {
+        min-height: 280px;
+        height: 280px;
+    }
+
+    .product-modal-info {
+        padding: 28px;
+    }
+
+}
 
 @media(max-width: 550px) {
 
     header {
+        height: 70px;
         padding: 0 5%;
     }
 
     .logo {
-        width: 120px;
+        width: 115px;
     }
 
     .cart-button {
@@ -716,43 +745,45 @@ footer .footer-logo {
         padding: 60px 5%;
     }
 
+    .cart {
+        width: 100%;
+        right: -100%;
+        padding: 25px;
+    }
+
     .hero-content {
-        padding: 60px 7%;
+        padding: 55px 7%;
     }
 
     .hero h1 {
         font-size: 42px;
     }
 
-    .cart {
-        width: 100%;
-        right: -100%;
-        padding: 28px 22px;
+    .hero-image {
+        height: 320px;
     }
 
-    .modal-content {
-        padding: 25px 20px;
+    .section-title h2 {
+        font-size: 35px;
     }
 
-    .modal-buttons {
-        flex-direction: column;
+    .about h2 {
+        font-size: 36px;
     }
 
-    .whatsapp-floating {
+    .whatsapp-float {
         right: 15px;
         bottom: 15px;
         padding: 13px 17px;
+        font-size: 12px;
     }
 
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- =========================
      HEADER
@@ -761,52 +792,43 @@ footer .footer-logo {
 <header>
 
     <a href="#inicio">
-
-        <img
-            src="logo.png"
-            class="logo"
-            alt="maliá."
-        >
-
+        <img src="logo.png" class="logo" alt="maliá.">
     </a>
 
-
     <nav>
-
         <a href="#inicio">Inicio</a>
-
         <a href="#kits">Kits</a>
-
         <a href="#productos">Productos</a>
-
         <a href="#sobre">Sobre maliá.</a>
-
         <a href="#contacto">Contacto</a>
-
     </nav>
 
-
-    <button
-        class="cart-button"
-        onclick="openCart()"
-    >
-
-        Carrito (<span id="cartCount">0</span>)
-
+    <button class="cart-button" onclick="openCart()">
+        🛒 Carrito (<span id="cartCount">0</span>)
     </button>
 
 </header>
 
+
+<!-- =========================
+     WHATSAPP FLOTANTE
+========================= -->
+
+<a
+    class="whatsapp-float"
+    href="https://wa.me/528135583471?text=Hola%20mali%C3%A1.%20Quiero%20informaci%C3%B3n%20sobre%20sus%20productos."
+    target="_blank">
+
+    WhatsApp
+
+</a>
 
 
 <!-- =========================
      HERO
 ========================= -->
 
-<section
-    class="hero"
-    id="inicio"
->
+<section class="hero" id="inicio">
 
     <div class="hero-content">
 
@@ -814,39 +836,29 @@ footer .footer-logo {
             DETAILS MADE WITH LOVE
         </span>
 
-
         <h1>
-
             Detalles que hacen
             especial cada momento.
-
         </h1>
 
-
         <p>
-
             Kits personalizados, detalles para eventos y
             regalos creados especialmente para ti.
-
         </p>
 
+        <div class="hero-thanks">
+            Gracias por confiar en maliá. 🤎
+        </div>
 
-        <a
-            href="#kits"
-            class="button"
-        >
-
+        <a href="#kits" class="button">
             Ver colección
-
         </a>
 
     </div>
 
-
     <div class="hero-image"></div>
 
 </section>
-
 
 
 <!-- =========================
@@ -861,79 +873,52 @@ footer .footer-logo {
             DESCUBRE MALIÁ.
         </span>
 
-
         <h2>
             Encuentra tu momento
         </h2>
 
     </div>
 
-
     <div class="categories">
 
+        <div class="category"
+        style="background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85')">
 
-        <div
-            class="category"
-            style="background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85')"
-        >
-
-            <span>
-                Wedding
-            </span>
+            <span>Wedding</span>
 
         </div>
 
+        <div class="category"
+        style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85')">
 
-        <div
-            class="category"
-            style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85')"
-        >
-
-            <span>
-                Bachelorette
-            </span>
+            <span>Bachelorette</span>
 
         </div>
 
+        <div class="category"
+        style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=85')">
 
-        <div
-            class="category"
-            style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=85')"
-        >
-
-            <span>
-                Party
-            </span>
+            <span>Party</span>
 
         </div>
 
+        <div class="category"
+        style="background-image:url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85')">
 
-        <div
-            class="category"
-            style="background-image:url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85')"
-        >
-
-            <span>
-                Special Moments
-            </span>
+            <span>Special Moments</span>
 
         </div>
-
 
     </div>
 
 </section>
 
 
-
 <!-- =========================
      KITS
 ========================= -->
 
-<section
-    class="products"
-    id="kits"
->
+<section class="products" id="kits">
 
     <div class="section-title">
 
@@ -941,21 +926,15 @@ footer .footer-logo {
             OUR COLLECTION
         </span>
 
-
         <h2>
             Kits personalizados
         </h2>
 
     </div>
 
-
-    <div
-        class="products-grid"
-        id="kitsGrid"
-    ></div>
+    <div class="products-grid" id="kitsGrid"></div>
 
 </section>
-
 
 
 <!-- =========================
@@ -970,28 +949,22 @@ footer .footer-logo {
             MALIÁ. ESSENTIALS
         </span>
 
-
         <h2>
             Más detalles
         </h2>
 
     </div>
 
-
-    <div
-        class="products-grid"
-        id="productsGrid"
-    ></div>
+    <div class="products-grid" id="productsGrid"></div>
 
 </section>
 
 
-
 <!-- =========================
-     SOBRE
+     SOBRE MALIÁ
 ========================= -->
 
-<section id="sobre">
+<section class="about-section" id="sobre">
 
     <div class="about">
 
@@ -999,23 +972,17 @@ footer .footer-logo {
             ABOUT MALIÁ.
         </span>
 
-
         <h2>
-
             Tú lo imaginas,
             <br>
             maliá. lo crea.
-
         </h2>
 
-
         <p>
-
             Creamos detalles personalizados para convertir
             momentos especiales en recuerdos que duran.
             Desde propuestas de madrina y despedidas de
             soltera hasta cumpleaños, regalos y eventos.
-
         </p>
 
     </div>
@@ -1023,39 +990,29 @@ footer .footer-logo {
 </section>
 
 
-
 <!-- =========================
      CONTACTO
 ========================= -->
 
-<section
-    class="contact"
-    id="contacto"
->
+<section class="contact" id="contacto">
 
     <span class="eyebrow">
         HABLEMOS
     </span>
 
-
     <h2>
         ¿Tienes una idea?
     </h2>
 
-
     <p style="margin-bottom:25px;">
-
         Cuéntanos qué necesitas y creemos algo
         especial para ti.
-
     </p>
 
-
     <a
-        href="https://wa.me/528135583471"
+        href="https://wa.me/528135583471?text=Hola%20mali%C3%A1.%20Quiero%20informaci%C3%B3n%20sobre%20sus%20productos."
         target="_blank"
-        class="button"
-    >
+        class="button">
 
         Escríbenos por WhatsApp
 
@@ -1064,373 +1021,223 @@ footer .footer-logo {
 </section>
 
 
-
 <!-- =========================
      FOOTER
 ========================= -->
 
 <footer>
 
-    <img
-        src="logo.png"
-        class="footer-logo"
-        alt="maliá."
-    >
-
+    <img src="logo.png" class="footer-logo" alt="maliá.">
 
     <p>
-
         Detalles que hacen especial cada momento.
-
     </p>
 
 </footer>
-
-
-
-<!-- =========================
-     WHATSAPP FLOTANTE
-========================= -->
-
-<a
-    href="https://wa.me/528135583471"
-    target="_blank"
-    class="whatsapp-floating"
->
-
-    WhatsApp
-
-</a>
-
 
 
 <!-- =========================
      CARRITO
 ========================= -->
 
-<div
-    class="cart"
-    id="cart"
->
+<div class="cart" id="cart">
 
-    <button
-        class="close-cart"
-        onclick="closeCart()"
-    >
-
+    <button class="close-cart" onclick="closeCart()">
         ×
-
     </button>
 
-
     <h2>
-        Tu solicitud
+        🛒 Tu carrito
     </h2>
 
-
     <p class="cart-subtitle">
-
-        Aquí aparecerán los productos que deseas cotizar.
-        La cotización final dependerá de la cantidad,
-        personalización y detalles de tu evento.
-
+        Revisa los productos que quieres cotizar.
     </p>
-
 
     <div id="cartItems"></div>
 
+    <div class="cart-total">
 
-    <button
-        class="checkout"
-        onclick="openCheckout()"
-    >
+        Productos:
+        <span id="cartCountTotal">0</span>
 
-        Solicitar cotización
+    </div>
 
+    <button class="checkout" onclick="openCheckout()">
+        Continuar con mi solicitud
     </button>
 
 </div>
-
 
 
 <!-- =========================
      MODAL PRODUCTO
 ========================= -->
 
-<div
-    class="modal"
-    id="productModal"
->
+<div class="product-modal" id="productModal">
 
-    <div class="modal-content">
-
+    <div class="product-modal-content">
 
         <button
-            class="close-cart"
-            onclick="closeProductModal()"
-        >
+            class="modal-close"
+            onclick="closeProductModal()">
 
             ×
 
         </button>
 
+        <img
+            id="modalProductImage"
+            class="product-modal-image"
+            src=""
+            alt="">
 
-        <h2 id="productModalTitle">
-            Producto
-        </h2>
+        <div class="product-modal-info">
 
+            <span
+                id="modalProductCollection"
+                class="eyebrow">
+            </span>
 
-        <p
-            class="modal-description"
-            id="productModalDescription"
-        ></p>
+            <h2 id="modalProductName"></h2>
 
+            <p id="modalProductDescription"></p>
 
-        <label
-            class="field-label"
-            for="productQuantity"
-        >
+            <label class="quantity-label">
+                ¿Cuántos necesitas?
+            </label>
 
-            Cantidad
-
-        </label>
-
-
-        <input
-            id="productQuantity"
-            type="number"
-            min="1"
-            placeholder="Escribe la cantidad"
-        >
-
-
-        <label
-            class="field-label"
-            for="productCustomization"
-        >
-
-            Personalización
-
-        </label>
-
-
-        <textarea
-            id="productCustomization"
-            placeholder="Escribe nombres, colores, temática, frases, diseños o cualquier detalle que quieras personalizar..."
-        ></textarea>
-
-
-        <div
-            class="error-message"
-            id="productError"
-        >
-
-            Por favor completa la cantidad y la personalización.
-
-        </div>
-
-
-        <div class="modal-buttons">
+            <input
+                id="productQuantity"
+                class="quantity-input"
+                type="number"
+                min="1"
+                value="1"
+                placeholder="Cantidad">
 
             <button
-                class="modal-secondary"
-                onclick="closeProductModal()"
-            >
+                class="checkout"
+                onclick="addModalProductToCart()">
 
-                Cancelar
-
-            </button>
-
-
-            <button
-                class="modal-primary"
-                onclick="addSelectedProduct()"
-            >
-
-                Agregar a mi solicitud
+                Agregar al carrito
 
             </button>
 
         </div>
-
 
     </div>
 
 </div>
 
 
-
 <!-- =========================
-     CHECKOUT
+     FORMULARIO
 ========================= -->
 
-<div
-    class="modal"
-    id="modal"
->
+<div class="modal" id="modal">
 
     <div class="modal-content">
 
-
         <button
             class="close-cart"
-            onclick="closeCheckout()"
-        >
+            onclick="closeCheckout()">
 
             ×
 
         </button>
-
 
         <h2>
             Cuéntanos sobre tu pedido
         </h2>
 
-
-        <p
-            class="modal-description"
-        >
-
-            Completa toda la información para poder enviarnos
-            tu solicitud de cotización.
-
+        <p class="form-description">
+            Completa toda la información para que podamos
+            preparar tu cotización.
         </p>
 
 
-        <div
-            class="error-message"
-            id="checkoutError"
-        >
+        <div class="order-summary">
 
-            Por favor completa todos los campos antes de continuar.
+            <div class="order-summary-title">
+                Tu solicitud
+            </div>
+
+            <div id="orderSummary"></div>
 
         </div>
-
-
-        <label
-            class="field-label"
-            for="customerName"
-        >
-
-            Nombre completo
-
-        </label>
 
 
         <input
             id="customerName"
             type="text"
-            placeholder="Escribe tu nombre"
-        >
-
-
-        <label
-            class="field-label"
-            for="customerPhone"
-        >
-
-            WhatsApp
-
-        </label>
+            placeholder="Nombre completo *">
 
 
         <input
             id="customerPhone"
             type="tel"
-            placeholder="Escribe tu número de WhatsApp"
-        >
-
-
-        <label
-            class="field-label"
-            for="eventType"
-        >
-
-            Tipo de evento
-
-        </label>
+            placeholder="WhatsApp *">
 
 
         <input
             id="eventType"
             type="text"
-            placeholder="Ej. despedida de soltera, boda, cumpleaños..."
-        >
+            placeholder="Tipo de evento *">
 
 
-        <div class="date-field">
-
-            <label
-                class="field-label"
-                for="eventDate"
-            >
-
-                Fecha de tu evento
-
-            </label>
-
-
-            <input
-                id="eventDate"
-                type="date"
-                aria-label="Elige la fecha de tu evento"
-            >
-
-        </div>
-
-
-        <label
-            class="field-label"
-            for="quantity"
-        >
-
-            Cantidad aproximada de invitados o piezas
-
+        <label class="date-label">
+            Elige la fecha de tu evento *
         </label>
-
 
         <input
-            id="quantity"
-            type="number"
-            min="1"
-            placeholder="Escribe una cantidad"
-        >
+            id="eventDate"
+            type="date"
+            required>
 
 
-        <label
-            class="field-label"
-            for="customMessage"
-        >
+        <select id="quantity">
 
-            Detalles de tu pedido
+            <option value="">
+                Cantidad aproximada *
+            </option>
 
-        </label>
+            <option>1 - 5</option>
+
+            <option>6 - 10</option>
+
+            <option>11 - 20</option>
+
+            <option>21 - 50</option>
+
+            <option>Más de 50</option>
+
+        </select>
 
 
         <textarea
             id="customMessage"
-            placeholder="Cuéntanos colores, nombres, temática, productos o cualquier detalle que quieras..."
-        ></textarea>
+            placeholder="Cuéntanos colores, nombres, temática, productos o cualquier detalle que quieras personalizar... *"></textarea>
+
+
+        <div class="required-note">
+            * Todos los campos son obligatorios.
+        </div>
 
 
         <button
             class="checkout"
-            onclick="sendOrder()"
-        >
+            onclick="sendOrder()">
 
             Enviar solicitud por WhatsApp
 
         </button>
-
 
     </div>
 
 </div>
 
 
-
 <script>
-
 
 /* =========================
    KITS
@@ -1442,63 +1249,63 @@ const kits = [
         name: "¿Quieres ser mi madrina?",
         collection: "WEDDING COLLECTION",
         image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85",
-        description: "Un kit especial para hacer la propuesta de madrina de una manera única y memorable."
+        description: "Un kit especial para hacer la pregunta más importante de una manera bonita y memorable."
     },
 
     {
         name: "¿Quieres ser mi dama de honor?",
         collection: "WEDDING COLLECTION",
         image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85",
-        description: "Un detalle personalizado para sorprender a tus damas de honor con una propuesta especial."
+        description: "Un detalle personalizado para sorprender a las personas que quieres tener a tu lado en tu boda."
     },
 
     {
         name: "Team Bride",
         collection: "WEDDING COLLECTION",
         image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85",
-        description: "Kits personalizados para las integrantes de tu despedida de soltera."
+        description: "Kits personalizados para todas las integrantes de tu equipo de novia."
     },
 
     {
         name: "Bride to Be",
         collection: "WEDDING COLLECTION",
         image: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85",
-        description: "Un kit creado especialmente para consentir y celebrar a la novia."
+        description: "Un kit especial para consentir y sorprender a la novia."
     },
 
     {
         name: "Bachelorette Party",
         collection: "BACHELORETTE",
         image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85",
-        description: "Recuerditos personalizados para cada invitada de tu despedida de soltera."
+        description: "Recuerditos personalizados para entregar a cada invitada de tu despedida de soltera."
     },
 
     {
         name: "Bachelorette Survival Kit",
         collection: "BACHELORETTE",
         image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85",
-        description: "Un kit divertido y personalizado para disfrutar una despedida de soltera."
+        description: "Un kit divertido y personalizado para acompañar una despedida de soltera."
     },
 
     {
         name: "Bride Squad",
         collection: "BACHELORETTE",
         image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85",
-        description: "Detalles personalizados para todo el grupo de amigas de la novia."
+        description: "Un detalle especial para todo el grupo de amigas de la novia."
     },
 
     {
         name: "Birthday Girl",
         collection: "PARTY COLLECTION",
         image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=85",
-        description: "Un kit especial para sorprender a la festejada en su cumpleaños."
+        description: "Un kit personalizado para sorprender a la festejada en su cumpleaños."
     },
 
     {
         name: "Birthday Party Favors",
         collection: "PARTY COLLECTION",
         image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85",
-        description: "Recuerditos personalizados para entregar a tus invitados."
+        description: "Recuerditos personalizados para tus invitados."
     },
 
     {
@@ -1512,39 +1319,38 @@ const kits = [
         name: "Bautizo",
         collection: "PARTY COLLECTION",
         image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85",
-        description: "Recuerditos elegantes y personalizados para un bautizo."
+        description: "Recuerditos elegantes y personalizados para un momento especial."
     },
 
     {
         name: "XV Collection",
         collection: "PARTY COLLECTION",
         image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=85",
-        description: "Kits personalizados para celebrar una fiesta de XV años."
+        description: "Kits y detalles personalizados para celebrar tus XV."
     },
 
     {
         name: "Just Because",
         collection: "SPECIAL MOMENTS",
         image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85",
-        description: "Un detalle especial para regalar simplemente porque sí."
+        description: "Un kit para regalar simplemente porque sí."
     },
 
     {
         name: "Thank You",
         collection: "SPECIAL MOMENTS",
         image: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=900&q=85",
-        description: "Un detalle personalizado para agradecer a alguien especial."
+        description: "Un detalle para agradecer a alguien especial."
     },
 
     {
         name: "Custom Kit",
         collection: "SPECIAL MOMENTS",
         image: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=900&q=85",
-        description: "Tú tienes la idea y maliá. se encarga de convertirla en un detalle personalizado."
+        description: "Tú lo imaginas, maliá. lo crea. Cuéntanos tu idea y crearemos un kit personalizado para ti."
     }
 
 ];
-
 
 
 /* =========================
@@ -1557,32 +1363,31 @@ const products = [
         name: "Etiquetas personalizadas",
         collection: "PAPELERÍA",
         image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=85",
-        description: "Etiquetas diseñadas especialmente para tus productos, regalos, eventos o detalles."
+        description: "Etiquetas diseñadas especialmente para tu evento, negocio, regalos o productos. Podemos personalizar nombres, colores, textos y temática."
     },
 
     {
         name: "Invitaciones",
         collection: "PAPELERÍA",
         image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85",
-        description: "Invitaciones personalizadas para bodas, cumpleaños, eventos y cualquier ocasión especial."
+        description: "Invitaciones personalizadas para bodas, cumpleaños, XV, baby showers, despedidas y cualquier ocasión especial."
     },
 
     {
         name: "Velas de recuerdito",
         collection: "RECUERDITOS",
         image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85",
-        description: "Velas personalizadas para regalar como recuerdito a tus invitados."
+        description: "Velas personalizadas para regalar a tus invitados. Ideales para bodas, bautizos, cumpleaños, despedidas y eventos especiales."
     },
 
     {
         name: "Hoodies personalizados",
         collection: "APPAREL",
         image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85",
-        description: "Hoodies personalizados para grupos, eventos, despedidas y ocasiones especiales."
+        description: "Hoodies personalizados para grupos, eventos, despedidas de soltera, equipos y ocasiones especiales."
     }
 
 ];
-
 
 
 /* =========================
@@ -1590,68 +1395,49 @@ const products = [
 ========================= */
 
 let cart = [];
-
 let selectedProduct = null;
-
-let selectedProductType = null;
-
 
 
 /* =========================
-   CREAR TARJETAS
+   MOSTRAR KITS
 ========================= */
 
-function createProductCard(product, index, type) {
+const kitsGrid = document.getElementById("kitsGrid");
 
-    return `
+kits.forEach((kit, index) => {
 
-        <div
-            class="product-card"
-            onclick="openProductModal(${index}, '${type}')"
-        >
+    kitsGrid.innerHTML += `
+
+        <div class="product-card"
+             onclick="openProductModal(kits[${index}])">
 
             <img
-                src="${product.image}"
-                alt="${product.name}"
-            >
-
+                src="${kit.image}"
+                alt="${kit.name}">
 
             <div class="product-info">
 
                 <div class="collection">
-
-                    ${product.collection}
-
+                    ${kit.collection}
                 </div>
-
 
                 <h3>
-
-                    ${product.name}
-
+                    ${kit.name}
                 </h3>
 
-
                 <p>
-
-                    ${product.description}
-
+                    ${kit.description}
                 </p>
 
-
-                <div class="price">
-
-                    COTIZAR
-
+                <div class="quote-label">
+                    Cotizar
                 </div>
-
 
                 <button
                     class="add-button"
-                    onclick="event.stopPropagation(); openProductModal(${index}, '${type}')"
-                >
+                    onclick="event.stopPropagation(); openProductModal(kits[${index}])">
 
-                    COTIZAR
+                    Ver detalles
 
                 </button>
 
@@ -1661,160 +1447,129 @@ function createProductCard(product, index, type) {
 
     `;
 
-}
-
-
-
-/* =========================
-   MOSTRAR KITS
-========================= */
-
-const kitsGrid =
-    document.getElementById("kitsGrid");
-
-
-kits.forEach((kit, index) => {
-
-    kitsGrid.innerHTML +=
-        createProductCard(
-            kit,
-            index,
-            "kit"
-        );
-
 });
-
 
 
 /* =========================
    MOSTRAR PRODUCTOS
 ========================= */
 
-const productsGrid =
-    document.getElementById("productsGrid");
-
+const productsGrid = document.getElementById("productsGrid");
 
 products.forEach((product, index) => {
 
-    productsGrid.innerHTML +=
-        createProductCard(
-            product,
-            index,
-            "product"
-        );
+    productsGrid.innerHTML += `
+
+        <div class="product-card"
+             onclick="openProductModal(products[${index}])">
+
+            <img
+                src="${product.image}"
+                alt="${product.name}">
+
+            <div class="product-info">
+
+                <div class="collection">
+                    ${product.collection}
+                </div>
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <p>
+                    ${product.description}
+                </p>
+
+                <div class="quote-label">
+                    Cotizar
+                </div>
+
+                <button
+                    class="add-button"
+                    onclick="event.stopPropagation(); openProductModal(products[${index}])">
+
+                    Ver detalles
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
 
 });
 
 
-
 /* =========================
-   MODAL PRODUCTO
+   MODAL DE PRODUCTO
 ========================= */
 
-function openProductModal(index, type) {
+function openProductModal(product) {
 
-    if (type === "kit") {
+    selectedProduct = product;
 
-        selectedProduct = kits[index];
+    document.getElementById("modalProductImage").src =
+        product.image;
 
-    } else {
+    document.getElementById("modalProductImage").alt =
+        product.name;
 
-        selectedProduct = products[index];
+    document.getElementById("modalProductCollection").innerText =
+        product.collection;
 
-    }
+    document.getElementById("modalProductName").innerText =
+        product.name;
 
+    document.getElementById("modalProductDescription").innerText =
+        product.description;
 
-    selectedProductType = type;
+    document.getElementById("productQuantity").value = 1;
 
-
-    document.getElementById(
-        "productModalTitle"
-    ).innerText =
-        selectedProduct.name;
-
-
-    document.getElementById(
-        "productModalDescription"
-    ).innerText =
-        selectedProduct.description;
-
-
-    document.getElementById(
-        "productQuantity"
-    ).value = "";
-
-
-    document.getElementById(
-        "productCustomization"
-    ).value = "";
-
-
-    document.getElementById(
-        "productError"
-    ).classList.remove("show");
-
-
-    document.getElementById(
-        "productModal"
-    ).classList.add("show");
+    document
+        .getElementById("productModal")
+        .classList.add("show");
 
 }
-
 
 
 function closeProductModal() {
 
-    document.getElementById(
-        "productModal"
-    ).classList.remove("show");
+    document
+        .getElementById("productModal")
+        .classList.remove("show");
+
+    selectedProduct = null;
 
 }
 
 
+function addModalProductToCart() {
 
-/* =========================
-   AGREGAR PRODUCTO
-========================= */
+    if (!selectedProduct) return;
 
-function addSelectedProduct() {
+    const quantityInput =
+        document.getElementById("productQuantity");
 
     const quantity =
-        document.getElementById(
-            "productQuantity"
-        ).value;
+        parseInt(quantityInput.value);
 
+    if (!quantity || quantity < 1) {
 
-    const customization =
-        document.getElementById(
-            "productCustomization"
-        ).value.trim();
-
-
-    const error =
-        document.getElementById(
-            "productError"
-        );
-
-
-    if (!quantity || quantity < 1 || !customization) {
-
-        error.classList.add("show");
+        alert("Por favor escribe una cantidad válida.");
 
         return;
 
     }
 
-
     cart.push({
 
         name: selectedProduct.name,
-
-        quantity: quantity,
-
-        customization: customization
+        collection: selectedProduct.collection,
+        quantity: quantity
 
     });
-
 
     updateCart();
 
@@ -1825,9 +1580,8 @@ function addSelectedProduct() {
 }
 
 
-
 /* =========================
-   ELIMINAR DEL CARRITO
+   CARRITO
 ========================= */
 
 function removeFromCart(index) {
@@ -1839,40 +1593,39 @@ function removeFromCart(index) {
 }
 
 
-
-/* =========================
-   ACTUALIZAR CARRITO
-========================= */
-
 function updateCart() {
 
     const container =
-        document.getElementById(
-            "cartItems"
-        );
-
+        document.getElementById("cartItems");
 
     container.innerHTML = "";
+
+    document.getElementById("cartCount").innerText =
+        cart.length;
+
+    document.getElementById("cartCountTotal").innerText =
+        cart.length;
 
 
     if (cart.length === 0) {
 
         container.innerHTML = `
 
-            <p
-                style="
-                    margin-top:25px;
-                    color:#766960;
-                    line-height:1.7;
-                "
-            >
+            <div class="empty-cart">
 
-                Todavía no has seleccionado
-                ningún producto para cotizar.
+                <p>
+                    Tu carrito está vacío.
+                </p>
 
-            </p>
+                <p style="margin-top:8px;">
+                    Agrega los productos que quieres cotizar.
+                </p>
+
+            </div>
 
         `;
+
+        return;
 
     }
 
@@ -1884,35 +1637,16 @@ function updateCart() {
             <div class="cart-item">
 
                 <div class="cart-item-name">
-
                     ${item.name}
-
                 </div>
 
-
-                <div class="cart-item-details">
-
-                    <strong>
-                        Cantidad:
-                    </strong>
-
-                    ${item.quantity}
-
-                    <br>
-
-                    <strong>
-                        Personalización:
-                    </strong>
-
-                    ${item.customization}
-
+                <div class="cart-item-quantity">
+                    Cantidad: ${item.quantity}
                 </div>
-
 
                 <button
                     class="remove"
-                    onclick="removeFromCart(${index})"
-                >
+                    onclick="removeFromCart(${index})">
 
                     Eliminar
 
@@ -1924,37 +1658,25 @@ function updateCart() {
 
     });
 
-
-    document.getElementById(
-        "cartCount"
-    ).innerText =
-        cart.length;
-
 }
 
 
-
-/* =========================
-   ABRIR / CERRAR CARRITO
-========================= */
-
 function openCart() {
 
-    document.getElementById(
-        "cart"
-    ).classList.add("open");
+    document
+        .getElementById("cart")
+        .classList.add("open");
 
 }
 
 
 function closeCart() {
 
-    document.getElementById(
-        "cart"
-    ).classList.remove("open");
+    document
+        .getElementById("cart")
+        .classList.remove("open");
 
 }
-
 
 
 /* =========================
@@ -1966,23 +1688,18 @@ function openCheckout() {
     if (cart.length === 0) {
 
         alert(
-            "Primero selecciona al menos un producto para cotizar."
+            "Agrega al menos un producto al carrito antes de continuar."
         );
 
         return;
 
     }
 
+    updateOrderSummary();
 
-    document.getElementById(
-        "checkoutError"
-    ).classList.remove("show");
-
-
-    document.getElementById(
-        "modal"
-    ).classList.add("show");
-
+    document
+        .getElementById("modal")
+        .classList.add("show");
 
     closeCart();
 
@@ -1991,87 +1708,61 @@ function openCheckout() {
 
 function closeCheckout() {
 
-    document.getElementById(
-        "modal"
-    ).classList.remove("show");
+    document
+        .getElementById("modal")
+        .classList.remove("show");
 
 }
 
 
+function updateOrderSummary() {
+
+    const summary =
+        document.getElementById("orderSummary");
+
+    summary.innerHTML = "";
+
+    cart.forEach(item => {
+
+        summary.innerHTML += `
+
+            <div class="order-summary-item">
+
+                ${item.name}
+                — ${item.quantity} pieza(s)
+
+            </div>
+
+        `;
+
+    });
+
+}
+
 
 /* =========================
-   FECHA EN CELULAR
-========================= */
-
-const eventDate =
-    document.getElementById(
-        "eventDate"
-    );
-
-
-eventDate.addEventListener(
-    "click",
-    function() {
-
-        if (this.showPicker) {
-
-            this.showPicker();
-
-        }
-
-    }
-);
-
-
-
-/* =========================
-   ENVIAR WHATSAPP
+   ENVIAR PEDIDO
 ========================= */
 
 function sendOrder() {
 
-
     const name =
-        document.getElementById(
-            "customerName"
-        ).value.trim();
-
+        document.getElementById("customerName").value.trim();
 
     const phone =
-        document.getElementById(
-            "customerPhone"
-        ).value.trim();
-
+        document.getElementById("customerPhone").value.trim();
 
     const event =
-        document.getElementById(
-            "eventType"
-        ).value.trim();
-
+        document.getElementById("eventType").value.trim();
 
     const date =
-        document.getElementById(
-            "eventDate"
-        ).value;
-
+        document.getElementById("eventDate").value;
 
     const quantity =
-        document.getElementById(
-            "quantity"
-        ).value.trim();
-
+        document.getElementById("quantity").value;
 
     const message =
-        document.getElementById(
-            "customMessage"
-        ).value.trim();
-
-
-    const error =
-        document.getElementById(
-            "checkoutError"
-        );
-
+        document.getElementById("customMessage").value.trim();
 
 
     /* =========================
@@ -2087,32 +1778,13 @@ function sendOrder() {
         !message
     ) {
 
-        error.innerText =
-            "Por favor completa todos los campos antes de enviar tu solicitud.";
-
-        error.classList.add("show");
-
-        return;
-
-    }
-
-
-
-    /* =========================
-       VALIDAR PRODUCTOS
-    ========================= */
-
-    if (cart.length === 0) {
-
-        error.innerText =
-            "Debes seleccionar al menos un producto para solicitar una cotización.";
-
-        error.classList.add("show");
+        alert(
+            "Por favor completa todos los campos antes de enviar tu solicitud."
+        );
 
         return;
 
     }
-
 
 
     /* =========================
@@ -2121,34 +1793,28 @@ function sendOrder() {
 
     let productsText = "";
 
-
     cart.forEach(item => {
 
         productsText +=
-            "- " +
+            "• " +
             item.name +
-            "\n" +
-            "Cantidad: " +
+            " — Cantidad: " +
             item.quantity +
-            "\n" +
-            "Personalización: " +
-            item.customization +
-            "\n\n";
+            "\n";
 
     });
 
 
-
     /* =========================
        MENSAJE WHATSAPP
-       SIN EMOJIS
+       SIN EMOJI DE CORAZÓN
     ========================= */
 
-    const whatsappMessage =
+    const whatsappMessage = `Hola maliá.
 
-`Hola maliá.
+Quiero información y cotización sobre los siguientes productos:
 
-Quiero solicitar una cotización.
+${productsText}
 
 NOMBRE:
 ${name}
@@ -2165,22 +1831,11 @@ ${date}
 CANTIDAD APROXIMADA:
 ${quantity}
 
-PRODUCTOS SELECCIONADOS:
-
-${productsText}
-
-DETALLES GENERALES:
+DETALLES Y PERSONALIZACIÓN:
 ${message}
-
-Quedo pendiente de mi cotización.
 
 Gracias.`;
 
-
-
-    /* =========================
-       WHATSAPP MALIÁ
-    ========================= */
 
     const numeroMalia =
         "528135583471";
@@ -2195,15 +1850,11 @@ Gracias.`;
         );
 
 
-    window.open(
-        url,
-        "_blank"
-    );
+    window.open(url, "_blank");
 
 }
 
 </script>
 
 </body>
-
 </html>
