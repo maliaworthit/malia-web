@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,15 +9,21 @@
 
 <style>
 
+/* =====================================================
+   MALIÁ. — ESTILOS GENERALES
+===================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
 
 :root {
     --brown: #5A4637;
+    --brown-dark: #443328;
     --brown-light: #B9A18B;
     --cream: #F7F2EC;
     --beige: #E9DDD0;
     --white: #FFFDFB;
     --text: #443A33;
+    --border: #E8DDD3;
 }
 
 * {
@@ -35,13 +42,21 @@ body {
     color: var(--text);
 }
 
-/* =========================
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header {
     height: 82px;
-    background: rgba(255,253,251,0.96);
+    background: rgba(255,253,251,0.97);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,7 +64,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #eee5dc;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -81,15 +97,18 @@ nav a:hover {
     border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
+    transition: 0.3s;
 }
 
 .cart-button:hover {
+    background: var(--brown-dark);
     transform: translateY(-2px);
 }
 
-/* =========================
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
     min-height: 650px;
@@ -137,10 +156,12 @@ nav a:hover {
     border: none;
     cursor: pointer;
     font-family: inherit;
+    transition: 0.3s;
 }
 
 .button:hover {
-    opacity: 0.9;
+    background: var(--brown-dark);
+    transform: translateY(-2px);
 }
 
 .hero-image {
@@ -150,9 +171,10 @@ nav a:hover {
     background-position: center;
 }
 
-/* =========================
+
+/* =====================================================
    SECCIONES
-========================= */
+===================================================== */
 
 section {
     padding: 85px 7%;
@@ -170,9 +192,10 @@ section {
     margin-top: 10px;
 }
 
-/* =========================
+
+/* =====================================================
    CATEGORÍAS
-========================= */
+===================================================== */
 
 .categories {
     display: grid;
@@ -182,7 +205,7 @@ section {
 
 .category {
     height: 230px;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -190,6 +213,11 @@ section {
     display: flex;
     align-items: end;
     padding: 25px;
+    transition: 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
 }
 
 .category::after {
@@ -210,9 +238,10 @@ section {
     font-size: 25px;
 }
 
-/* =========================
+
+/* =====================================================
    PRODUCTOS
-========================= */
+===================================================== */
 
 .products {
     background: var(--cream);
@@ -226,15 +255,15 @@ section {
 
 .product-card {
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #eee3d9;
+    border: 1px solid var(--border);
     transition: 0.3s;
 }
 
 .product-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(70,50,35,0.08);
+    box-shadow: 0 15px 35px rgba(70,50,35,0.10);
 }
 
 .product-card img {
@@ -282,6 +311,7 @@ section {
     border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
+    transition: 0.3s;
 }
 
 .add-button:hover {
@@ -289,9 +319,10 @@ section {
     color: white;
 }
 
-/* =========================
-   SOBRE MALIÁ
-========================= */
+
+/* =====================================================
+   SOBRE MALIÁ.
+===================================================== */
 
 .about {
     max-width: 750px;
@@ -310,9 +341,10 @@ section {
     line-height: 1.9;
 }
 
-/* =========================
+
+/* =====================================================
    CONTACTO
-========================= */
+===================================================== */
 
 .contact {
     background: var(--cream);
@@ -326,9 +358,10 @@ section {
     margin: 12px 0 25px;
 }
 
-/* =========================
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
     background: var(--brown);
@@ -342,80 +375,223 @@ footer .footer-logo {
     margin-bottom: 18px;
 }
 
-/* =========================
+
+/* =====================================================
    CARRITO
-========================= */
+===================================================== */
 
 .cart {
     position: fixed;
-    right: -430px;
+    right: -470px;
     top: 0;
-    width: 410px;
+    width: 450px;
     height: 100vh;
-    background: white;
+    background: var(--white);
     z-index: 3000;
     padding: 30px;
-    box-shadow: -10px 0 35px rgba(0,0,0,0.12);
-    transition: 0.4s;
+    box-shadow: -15px 0 45px rgba(50,35,25,0.18);
+    transition: right 0.4s ease;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart.open {
     right: 0;
 }
 
-.close-cart {
-    float: right;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+}
+
+.cart-label {
+    color: var(--brown-light);
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 
 .cart h2 {
     font-family: "Playfair Display", serif;
     color: var(--brown);
-    font-size: 30px;
+    font-size: 32px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.close-cart {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--brown);
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-cart:hover {
+    background: var(--beige);
+    transform: rotate(90deg);
+}
+
+.cart-items {
+    flex: 1;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 70px 20px;
+    color: var(--brown-light);
+}
+
+.empty-cart-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.empty-cart h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--brown);
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.empty-cart p {
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 .cart-item {
-    padding: 18px 0;
-    border-bottom: 1px solid #eee;
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee7e1;
+}
+
+.cart-item-image {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-info {
+    min-width: 0;
 }
 
 .cart-item-name {
     color: var(--brown);
-    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.cart-item-price {
+    color: var(--brown-light);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-controls button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--brown);
+    cursor: pointer;
+}
+
+.quantity-controls span {
+    min-width: 18px;
+    text-align: center;
+    font-size: 13px;
 }
 
 .remove {
     border: none;
     background: none;
-    color: #9b5c5c;
+    color: #9b7565;
     cursor: pointer;
-    margin-top: 8px;
+    font-size: 11px;
+    text-decoration: underline;
+    margin-left: 12px;
+}
+
+.cart-summary {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #8a796c;
 }
 
 .cart-total {
-    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd1c6;
+    padding-top: 18px;
+    margin-top: 15px;
+    font-size: 21px;
     font-weight: 600;
     color: var(--brown);
-    margin: 25px 0;
 }
 
 .checkout {
     width: 100%;
-    padding: 15px;
+    padding: 16px;
+    margin-top: 22px;
     background: var(--brown);
     color: white;
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
 }
 
-/* =========================
+.checkout:hover {
+    background: var(--brown-dark);
+    transform: translateY(-2px);
+}
+
+.cart-note {
+    text-align: center;
+    color: #a18e7e;
+    font-size: 10px;
+    margin-top: 14px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
    MODAL
-========================= */
+===================================================== */
 
 .modal {
     display: none;
@@ -436,8 +612,11 @@ footer .footer-logo {
     background: white;
     width: 520px;
     max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
     padding: 35px;
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
 }
 
 .modal-content h2 {
@@ -454,17 +633,69 @@ footer .footer-logo {
     padding: 13px;
     margin-bottom: 12px;
     border: 1px solid #ddd2c7;
-    border-radius: 6px;
+    border-radius: 7px;
     font-family: inherit;
+    outline: none;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+    border-color: var(--brown-light);
 }
 
 .modal-content textarea {
-    min-height: 100px;
+    min-height: 110px;
+    resize: vertical;
 }
 
-/* =========================
+.modal-close {
+    float: right;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--brown);
+}
+
+
+/* =====================================================
+   WHATSAPP FLOTANTE
+===================================================== */
+
+.whatsapp-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--brown);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(50,35,25,0.25);
+    z-index: 5000;
+    transition: 0.3s;
+}
+
+.whatsapp-button:hover {
+    background: var(--brown-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(50,35,25,0.3);
+}
+
+.whatsapp-icon {
+    font-size: 19px;
+}
+
+
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
 @media(max-width: 850px) {
 
@@ -508,6 +739,21 @@ footer .footer-logo {
     .cart {
         width: 100%;
         right: -100%;
+        padding: 25px;
+    }
+
+    .whatsapp-button {
+        right: 18px;
+        bottom: 18px;
+        width: 54px;
+        height: 54px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .whatsapp-text {
+        display: none;
     }
 
 }
@@ -519,9 +765,9 @@ footer .footer-logo {
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
@@ -544,9 +790,9 @@ footer .footer-logo {
 </header>
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero" id="inicio">
 
@@ -577,9 +823,9 @@ footer .footer-logo {
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      CATEGORÍAS
-========================= -->
+===================================================== -->
 
 <section>
 
@@ -634,9 +880,9 @@ footer .footer-logo {
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      KITS
-========================= -->
+===================================================== -->
 
 <section class="products" id="kits">
 
@@ -652,15 +898,14 @@ footer .footer-logo {
 
     </div>
 
-
     <div class="products-grid" id="kitsGrid"></div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      PRODUCTOS
-========================= -->
+===================================================== -->
 
 <section id="productos">
 
@@ -676,15 +921,14 @@ footer .footer-logo {
 
     </div>
 
-
     <div class="products-grid" id="productsGrid"></div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      SOBRE
-========================= -->
+===================================================== -->
 
 <section id="sobre">
 
@@ -712,9 +956,9 @@ footer .footer-logo {
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      CONTACTO
-========================= -->
+===================================================== -->
 
 <section class="contact" id="contacto">
 
@@ -732,18 +976,20 @@ footer .footer-logo {
     </p>
 
     <a
-        href="https://wa.me/528135583471"
+        href="https://wa.me/528135583471?text=Hola%20maliá.%20🤎%20Quiero%20información%20sobre%20sus%20productos."
         target="_blank"
         class="button">
+
         💬 Escríbenos por WhatsApp
+
     </a>
-    
+
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -762,51 +1008,105 @@ footer .footer-logo {
 </footer>
 
 
-<!-- =========================
+<!-- =====================================================
      CARRITO
-========================= -->
+===================================================== -->
 
 <div class="cart" id="cart">
 
-    <button class="close-cart" onclick="closeCart()">
-        ×
-    </button>
+    <div class="cart-header">
 
-    <h2>
-        Tu carrito
-    </h2>
+        <div>
 
-    <br>
+            <div class="cart-label">
+                MALIÁ.
+            </div>
 
-    <div id="cartItems"></div>
+            <h2>
+                Tu carrito
+            </h2>
 
-    <div class="cart-total">
+        </div>
 
-        Total:
-        $<span id="cartTotal">0</span> MXN
+        <button
+            class="close-cart"
+            onclick="closeCart()">
+
+            ×
+
+        </button>
 
     </div>
 
-    <button class="checkout" onclick="openCheckout()">
 
-        Continuar con mi pedido
+    <div
+        class="cart-items"
+        id="cartItems">
+    </div>
 
-    </button>
+
+    <div class="cart-summary">
+
+        <div class="summary-line">
+
+            <span>
+                Productos
+            </span>
+
+            <span id="cartCountSummary">
+                0
+            </span>
+
+        </div>
+
+
+        <div class="cart-total">
+
+            <span>
+                Total
+            </span>
+
+            <span>
+                $<span id="cartTotal">0</span> MXN
+            </span>
+
+        </div>
+
+
+        <button
+            class="checkout"
+            onclick="openCheckout()">
+
+            Continuar con mi pedido →
+
+        </button>
+
+
+        <div class="cart-note">
+
+            El precio mostrado es aproximado.
+            <br>
+            Personalizaciones y cantidades pueden modificar
+            el precio final.
+
+        </div>
+
+    </div>
 
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      FORMULARIO
-========================= -->
+===================================================== -->
 
 <div class="modal" id="modal">
 
     <div class="modal-content">
 
         <button
-        class="close-cart"
-        onclick="closeCheckout()">
+            class="modal-close"
+            onclick="closeCheckout()">
 
             ×
 
@@ -818,26 +1118,26 @@ footer .footer-logo {
 
 
         <input
-        id="customerName"
-        type="text"
-        placeholder="Nombre completo">
+            id="customerName"
+            type="text"
+            placeholder="Nombre completo">
 
 
         <input
-        id="customerPhone"
-        type="tel"
-        placeholder="WhatsApp">
+            id="customerPhone"
+            type="tel"
+            placeholder="Tu WhatsApp">
 
 
         <input
-        id="eventType"
-        type="text"
-        placeholder="Tipo de evento">
+            id="eventType"
+            type="text"
+            placeholder="Tipo de evento">
 
 
         <input
-        id="eventDate"
-        type="date">
+            id="eventDate"
+            type="date">
 
 
         <select id="quantity">
@@ -860,13 +1160,13 @@ footer .footer-logo {
 
 
         <textarea
-        id="customMessage"
-        placeholder="Cuéntanos colores, nombres, temática, productos o cualquier detalle que quieras personalizar..."></textarea>
+            id="customMessage"
+            placeholder="Cuéntanos colores, nombres, temática, productos o cualquier detalle que quieras personalizar..."></textarea>
 
 
         <button
-        class="checkout"
-        onclick="sendOrder()">
+            class="checkout"
+            onclick="sendOrder()">
 
             Enviar pedido por WhatsApp 🤎
 
@@ -877,11 +1177,32 @@ footer .footer-logo {
 </div>
 
 
+<!-- =====================================================
+     WHATSAPP FLOTANTE
+===================================================== -->
+
+<a
+    href="https://wa.me/528135583471?text=Hola%20maliá.%20🤎%20Quiero%20información%20sobre%20sus%20productos."
+    target="_blank"
+    class="whatsapp-button">
+
+    <span class="whatsapp-icon">
+        ☏
+    </span>
+
+    <span class="whatsapp-text">
+        WhatsApp
+    </span>
+
+</a>
+
+
 <script>
 
-/* =========================
+
+/* =====================================================
    KITS
-========================= */
+===================================================== */
 
 const kits = [
 
@@ -1008,9 +1329,9 @@ const kits = [
 ];
 
 
-/* =========================
+/* =====================================================
    PRODUCTOS
-========================= */
+===================================================== */
 
 const products = [
 
@@ -1065,11 +1386,12 @@ const products = [
 ];
 
 
-/* =========================
+/* =====================================================
    MOSTRAR KITS
-========================= */
+===================================================== */
 
-const kitsGrid = document.getElementById("kitsGrid");
+const kitsGrid =
+    document.getElementById("kitsGrid");
 
 kits.forEach((kit, index) => {
 
@@ -1077,7 +1399,9 @@ kits.forEach((kit, index) => {
 
         <div class="product-card">
 
-            <img src="${kit.image}" alt="${kit.name}">
+            <img
+                src="${kit.image}"
+                alt="${kit.name}">
 
             <div class="product-info">
 
@@ -1098,14 +1422,16 @@ kits.forEach((kit, index) => {
                     ${
                         kit.price === 0
                         ? "COTIZAR"
-                        : "DESDE $" + kit.price + " MXN"
+                        : "DESDE $" +
+                          kit.price +
+                          " MXN"
                     }
 
                 </div>
 
                 <button
-                class="add-button"
-                onclick="addToCart(kits[${index}])">
+                    class="add-button"
+                    onclick="addToCart(kits[${index}])">
 
                     ${
                         kit.price === 0
@@ -1124,11 +1450,12 @@ kits.forEach((kit, index) => {
 });
 
 
-/* =========================
+/* =====================================================
    MOSTRAR PRODUCTOS
-========================= */
+===================================================== */
 
-const productsGrid = document.getElementById("productsGrid");
+const productsGrid =
+    document.getElementById("productsGrid");
 
 products.forEach((product, index) => {
 
@@ -1136,7 +1463,9 @@ products.forEach((product, index) => {
 
         <div class="product-card">
 
-            <img src="${product.image}" alt="${product.name}">
+            <img
+                src="${product.image}"
+                alt="${product.name}">
 
             <div class="product-info">
 
@@ -1157,8 +1486,8 @@ products.forEach((product, index) => {
                 </div>
 
                 <button
-                class="add-button"
-                onclick="addToCart(products[${index}])">
+                    class="add-button"
+                    onclick="addToCart(products[${index}])">
 
                     Agregar al carrito
 
@@ -1173,20 +1502,59 @@ products.forEach((product, index) => {
 });
 
 
-/* =========================
+/* =====================================================
    CARRITO
-========================= */
+===================================================== */
 
 let cart = [];
 
 
 function addToCart(product) {
 
-    cart.push(product);
+    const existing =
+        cart.find(item => item.name === product.name);
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+            ...product,
+            quantity: 1
+        });
+
+    }
+
+    updateCart();
+    openCart();
+
+}
+
+
+function increaseQuantity(index) {
+
+    cart[index].quantity++;
 
     updateCart();
 
-    openCart();
+}
+
+
+function decreaseQuantity(index) {
+
+    if (cart[index].quantity > 1) {
+
+        cart[index].quantity--;
+
+    } else {
+
+        cart.splice(index, 1);
+
+    }
+
+    updateCart();
 
 }
 
@@ -1208,14 +1576,30 @@ function updateCart() {
     container.innerHTML = "";
 
     let total = 0;
+    let totalItems = 0;
 
 
     if (cart.length === 0) {
 
         container.innerHTML = `
-            <p style="margin-top:25px;">
-                Tu carrito está vacío 🤎
-            </p>
+
+            <div class="empty-cart">
+
+                <div class="empty-cart-icon">
+                    🛍️
+                </div>
+
+                <h3>
+                    Tu carrito está vacío
+                </h3>
+
+                <p>
+                    Agrega algo especial
+                    para comenzar tu pedido. 🤎
+                </p>
+
+            </div>
+
         `;
 
     }
@@ -1223,31 +1607,74 @@ function updateCart() {
 
     cart.forEach((item, index) => {
 
-        total += item.price;
+        total += item.price * item.quantity;
+        totalItems += item.quantity;
+
 
         container.innerHTML += `
 
             <div class="cart-item">
 
-                <div class="cart-item-name">
-                    ${item.name}
-                </div>
+                <img
+                    class="cart-item-image"
+                    src="${item.image}"
+                    alt="${item.name}">
 
-                <div>
+
+                <div class="cart-item-info">
+
+                    <div class="cart-item-name">
+                        ${item.name}
+                    </div>
+
+                    <div class="cart-item-price">
+
+                        ${
+                            item.price === 0
+                            ? "Cotización"
+                            : "$" +
+                              item.price.toLocaleString() +
+                              " MXN c/u"
+                        }
+
+                    </div>
+
+
                     ${
                         item.price === 0
-                        ? "Cotización"
-                        : "$" + item.price + " MXN"
+                        ? ""
+
+                        : `
+
+                        <div class="quantity-controls">
+
+                            <button
+                                onclick="decreaseQuantity(${index})">
+                                −
+                            </button>
+
+                            <span>
+                                ${item.quantity}
+                            </span>
+
+                            <button
+                                onclick="increaseQuantity(${index})">
+                                +
+                            </button>
+
+                            <button
+                                class="remove"
+                                onclick="removeFromCart(${index})">
+                                Eliminar
+                            </button>
+
+                        </div>
+
+                        `
+
                     }
+
                 </div>
-
-                <button
-                class="remove"
-                onclick="removeFromCart(${index})">
-
-                    Eliminar
-
-                </button>
 
             </div>
 
@@ -1260,7 +1687,10 @@ function updateCart() {
         total.toLocaleString();
 
     document.getElementById("cartCount").innerText =
-        cart.length;
+        totalItems;
+
+    document.getElementById("cartCountSummary").innerText =
+        totalItems;
 
 }
 
@@ -1283,11 +1713,21 @@ function closeCart() {
 }
 
 
-/* =========================
+/* =====================================================
    FORMULARIO
-========================= */
+===================================================== */
 
 function openCheckout() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Agrega al menos un producto al carrito 🤎"
+        );
+
+        return;
+
+    }
 
     document
         .getElementById("modal")
@@ -1307,20 +1747,20 @@ function closeCheckout() {
 }
 
 
-/* =========================
-   WHATSAPP
-========================= */
+/* =====================================================
+   ENVIAR PEDIDO A WHATSAPP
+===================================================== */
 
 function sendOrder() {
 
     const name =
-        document.getElementById("customerName").value;
+        document.getElementById("customerName").value.trim();
 
     const phone =
-        document.getElementById("customerPhone").value;
+        document.getElementById("customerPhone").value.trim();
 
     const event =
-        document.getElementById("eventType").value;
+        document.getElementById("eventType").value.trim();
 
     const date =
         document.getElementById("eventDate").value;
@@ -1329,13 +1769,13 @@ function sendOrder() {
         document.getElementById("quantity").value;
 
     const message =
-        document.getElementById("customMessage").value;
+        document.getElementById("customMessage").value.trim();
 
 
     if (!name || !phone) {
 
         alert(
-            "Por favor escribe tu nombre y WhatsApp."
+            "Por favor escribe tu nombre y WhatsApp. 🤎"
         );
 
         return;
@@ -1345,22 +1785,23 @@ function sendOrder() {
 
     let productsText = "";
 
+    let total = 0;
 
-    if (cart.length === 0) {
 
-        productsText =
-            "Quiero solicitar información sobre un kit personalizado.";
+    cart.forEach(item => {
 
-    } else {
+        productsText +=
+            "• " +
+            item.name +
+            " x" +
+            item.quantity +
+            "\n";
 
-        cart.forEach(item => {
+        total +=
+            item.price *
+            item.quantity;
 
-            productsText +=
-                "• " + item.name + "\n";
-
-        });
-
-    }
+    });
 
 
     const whatsappMessage = `
@@ -1376,36 +1817,26 @@ WHATSAPP:
 ${phone}
 
 TIPO DE EVENTO:
-${event}
+${event || "No especificado"}
 
 FECHA:
-${date}
+${date || "No especificada"}
 
-CANTIDAD:
-${quantity}
+CANTIDAD APROXIMADA:
+${quantity || "No especificada"}
 
 PRODUCTOS:
 ${productsText}
 
+TOTAL APROXIMADO:
+$${total.toLocaleString()} MXN
+
 PERSONALIZACIÓN:
-${message}
+${message || "No especificada"}
 
 ¡Gracias! ✨
 
-    `;
-
-
-    /*
-    CAMBIA ESTE NÚMERO POR EL WHATSAPP
-    DE MALIÁ.
-
-    IMPORTANTE:
-    escribe el número con código de país,
-    sin +, espacios ni guiones.
-
-    Ejemplo:
-    528112345678
-    */
+`;
 
 
     const numeroMalia =
@@ -1426,6 +1857,7 @@ ${message}
 }
 
 </script>
+
 
 </body>
 </html>
